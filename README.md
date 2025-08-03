@@ -108,8 +108,8 @@ If using boot auto-scan, also add the following receiver:
 
 ```kotlin
 BiqController.Builder(this)
-    .setNotificationEntryPoint(this::class.java) // Optional, before build()
     .build()
+    .setNotificationEntryPoint(this::class.java) // Optional
     .setBootAutoScan(true)                      // Optional, default: false
     .setDebugMode(true)                         // Optional, default: false
     .init(
