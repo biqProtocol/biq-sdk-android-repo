@@ -75,6 +75,8 @@ Add the following permissions to your **AndroidManifest.xml**:
 <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
 <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+
+<uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
 ```
 
 ### Why These Permissions?
