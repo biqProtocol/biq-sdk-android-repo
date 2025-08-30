@@ -13,6 +13,7 @@ The **BIQ Android SDK** is a lightweight library that enables **proof of presenc
 - Foreground/background scanning
 - Boot auto-start support
 - Notification support for beacon region entry
+- State listeners for scanning, SDK state, and validation records
 - Debugging tools and validation record inspection
 
 ---
@@ -84,8 +85,8 @@ Add the following permissions to your **AndroidManifest.xml**:
 - **Location & Bluetooth**: Required for beacon detection and communication
 - **Internet**: To communicate with the BIQ validation server
 - **Foreground/Background Service**: Ensures scanning continues even when the app is not in the foreground
-- **POST\_NOTIFICATIONS**: To alert the user when entering a beacon region
-- **RECEIVE\_BOOT\_COMPLETED**: Enables automatic scanning after device restarts
+- **POST_NOTIFICATIONS**: To alert the user when entering a beacon region
+- **RECEIVE_BOOT_COMPLETED**: Enables automatic scanning after device restarts
 
 If using boot auto-scan, also add the following receiver:
 
@@ -121,11 +122,50 @@ BiqController.Builder(this)
 ### Start and Stop Presence Detection
 
 ```kotlin
-BiqController.getInstance().startPresence {
-    "Missing permission: ${it.permission}".logErrorMessage()
-}
+BiqController.getInstance().startPresence()
 
 BiqController.getInstance().stopPresence()
+```
+
+### Listening for State Changes
+
+```kotlin
+val listener = object : BiqController.BiqStateListener {
+    override fun onSdkStateChanged(newState: BiqPresenceState) {
+        // Handle SDK state change
+    }
+
+    override fun onScanningStateChanged(newState: BiqScanningState) {
+        // Handle scanning state change
+    }
+
+    override fun onValidationRecordsChanged(newRecords: List<PresenceProofResponseDto>) {
+        // Handle validation record updates
+    }
+}
+
+BiqController.getInstance().setPresenceStateListener(listener)
+```
+
+### Permissions Handling
+
+```kotlin
+if (!BiqController.getInstance().areAllPermissionsGranted()) {
+    val missingPermission = BiqController.getInstance().getMissingPermission()
+    // Request this permission from the user
+}
+```
+
+### Notifications
+
+```kotlin
+BiqController.getInstance().initNotificationData(
+    iconResId = R.drawable.ic_notification, // Optional
+    scanningNotificationTitle = "Scanning...",
+    scanningNotificationMessage = "Looking for beacons nearby",
+    proximityNotificationTitle = "Beacon detected!",
+    proximityNotificationMessage = "Presence has been validated"
+)
 ```
 
 ---
@@ -144,8 +184,15 @@ lifecycleScope.launch {
 ### Clear Debug Validation Records
 
 ```kotlin
+BiqController.getInstance().removeDebugValidationRecords()
+```
+
+### Query Validation Records from Database
+
+```kotlin
 lifecycleScope.launch {
-    BiqController.getInstance().removeDebugValidationRecords()
+    val records = BiqController.getInstance().getValidationRecords()
+    // Process records
 }
 ```
 
@@ -168,4 +215,3 @@ lifecycleScope.launch {
 ## 📞 Support
 
 For issues or feature requests, please contact [BIQ Support](https://www.biq.me).
-
