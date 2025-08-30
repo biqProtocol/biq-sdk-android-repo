@@ -122,7 +122,23 @@ BiqController.Builder(this)
 ### Start and Stop Presence Detection
 
 ```kotlin
-BiqController.getInstance().startPresence()
+lifecycleScope.launch {
+    when (val result = BiqController.getInstance().startPresence()) {
+        is ConnectionState.Success -> {
+            // Presence started successfully
+            val currentState = result.state
+        }
+        is ConnectionState.Error -> {
+            // Handle error
+            val errorMessage = result.message
+            val exception = result.exception
+        }
+        is ConnectionState.MissingPermission -> {
+            // Request the missing permission
+            val permission = result.permission
+        }
+    }
+}
 
 BiqController.getInstance().stopPresence()
 ```
