@@ -1,0 +1,290 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "biq.sdk.android",
+    "module": "biq",
+    "version": "1.0.15",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.13"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.16.0"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.7.1"
+          }
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.12.0"
+          }
+        },
+        {
+          "group": "androidx.datastore",
+          "module": "datastore-preferences",
+          "version": {
+            "requires": "1.1.7"
+          }
+        },
+        {
+          "group": "com.davidgyoungtech",
+          "module": "beacon-parsers",
+          "version": {
+            "requires": "1.0"
+          },
+          "excludes": [
+            {
+              "group": "org.altbeacon",
+              "module": "*"
+            }
+          ]
+        },
+        {
+          "group": "org.altbeacon",
+          "module": "android-beacon-library",
+          "version": {
+            "requires": "2.21.1"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "retrofit",
+          "version": {
+            "requires": "2.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "converter-gson",
+          "version": {
+            "requires": "2.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "logging-interceptor",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "androidx.room",
+          "module": "room-runtime",
+          "version": {
+            "requires": "2.7.1"
+          }
+        },
+        {
+          "group": "androidx.room",
+          "module": "room-ktx",
+          "version": {
+            "requires": "2.7.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "biq-1.0.15.aar",
+          "url": "biq-1.0.15.aar",
+          "size": 389196,
+          "sha512": "9acb12bf0b12fd6311e374a36552f312cd407c74102f8c3d1ef24024ad40872c8b34ff2320ed2afc2041cb4ba299bd155f7f63c0ccd6ecb46bcf681c6ad22d82",
+          "sha256": "bbc372099c7f806cedc79efea6f8d8781bd92b0d7132bc035ee0e5ea4c2c8c06",
+          "sha1": "8f4209aefeb47895b078bfdfd8a478ccd0deaee6",
+          "md5": "4fdc172a6f413898f086d09b5f60a4fd"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.16.0"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.7.1"
+          }
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.12.0"
+          }
+        },
+        {
+          "group": "androidx.datastore",
+          "module": "datastore-preferences",
+          "version": {
+            "requires": "1.1.7"
+          }
+        },
+        {
+          "group": "com.davidgyoungtech",
+          "module": "beacon-parsers",
+          "version": {
+            "requires": "1.0"
+          },
+          "excludes": [
+            {
+              "group": "org.altbeacon",
+              "module": "*"
+            }
+          ]
+        },
+        {
+          "group": "org.altbeacon",
+          "module": "android-beacon-library",
+          "version": {
+            "requires": "2.21.1"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "retrofit",
+          "version": {
+            "requires": "2.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "converter-gson",
+          "version": {
+            "requires": "2.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "logging-interceptor",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "androidx.room",
+          "module": "room-runtime",
+          "version": {
+            "requires": "2.7.1"
+          }
+        },
+        {
+          "group": "androidx.room",
+          "module": "room-ktx",
+          "version": {
+            "requires": "2.7.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "biq-1.0.15.aar",
+          "url": "biq-1.0.15.aar",
+          "size": 389196,
+          "sha512": "9acb12bf0b12fd6311e374a36552f312cd407c74102f8c3d1ef24024ad40872c8b34ff2320ed2afc2041cb4ba299bd155f7f63c0ccd6ecb46bcf681c6ad22d82",
+          "sha256": "bbc372099c7f806cedc79efea6f8d8781bd92b0d7132bc035ee0e5ea4c2c8c06",
+          "sha1": "8f4209aefeb47895b078bfdfd8a478ccd0deaee6",
+          "md5": "4fdc172a6f413898f086d09b5f60a4fd"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "biq-1.0.15-sources.jar",
+          "url": "biq-1.0.15-sources.jar",
+          "size": 45724,
+          "sha512": "8ce3f30a8d78a342f992313fc324a9359155223ceafc89d3237794e290baf338a27b15aee89a7767c3498d9a7ad9484c636d87795f7d0144ff7f7e175bb9fb92",
+          "sha256": "82ff249c58a7d42a649fb81a1c371417508d6a4d8641cbae3fb6b0d82a4c386b",
+          "sha1": "d35eb9c74068b283d6b75ae517d8f6b766db08ae",
+          "md5": "af0faef76a3ae76e93fc18b0d1372d40"
+        }
+      ]
+    }
+  ]
+}
